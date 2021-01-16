@@ -22,7 +22,23 @@ class MemberList extends StatelessWidget {
                       style: TextStyle(fontSize: 22.0),
                     ),
                     FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (ctx) => AlertDialog(
+                            title: Text("Alert Dialog Box"),
+                            content: Text("You have raised a Alert Dialog Box"),
+                            actions: <Widget>[
+                              FlatButton(
+                                onPressed: () {
+                                  Navigator.of(ctx).pop();
+                                },
+                                child: Text("okay"),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                       child: Icon(
                         Icons.remove_red_eye_rounded,
                         color: Colors.deepOrange,
