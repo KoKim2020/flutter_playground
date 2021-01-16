@@ -14,9 +14,21 @@ class MemberList extends StatelessWidget {
             return Card(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  members[index],
-                  style: TextStyle(fontSize: 22.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      members[index],
+                      style: TextStyle(fontSize: 22.0),
+                    ),
+                    FlatButton(
+                      onPressed: () {},
+                      child: Icon(
+                        Icons.remove_red_eye_rounded,
+                        color: Colors.deepOrange,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             );
