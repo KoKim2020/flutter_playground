@@ -17,6 +17,11 @@ class EligiblityScreen extends StatelessWidget {
       builder: (context) {
         return Scaffold(
           body:  Test(ageController: ageController, memberController: memberController),
+          appBar: AppBar(
+            title: Text(
+              'Flutter Member List'
+            ),
+          ),
         );
       },
     );
@@ -37,7 +42,7 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16),
-      child: Form(child: Consumer<MemberProvider>(
+      child: Consumer<MemberProvider>(
         builder: (context, provider, child) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -79,7 +84,7 @@ class Test extends StatelessWidget {
             ],
           );
         },
-      )),
+      ),
     );
   }
 }
