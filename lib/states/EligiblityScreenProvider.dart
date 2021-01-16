@@ -5,6 +5,8 @@ class EligiblityScreenProvider extends ChangeNotifier{
   bool _isEligible;
   String _testing = "I am testing";
   String appTitle = "Welcome To Flutter State Management";
+  var myList = ['KoKim', 'Koshine', 'KoMu'];
+
 
   void checkEligiblity(int age){
     if(age >= 18)
