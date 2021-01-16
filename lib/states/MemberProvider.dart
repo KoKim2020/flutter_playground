@@ -9,6 +9,11 @@ class MemberProvider extends ChangeNotifier{
     notifyListeners();
   }
 
+  void clearMembers () {
+    memberList.clear();
+    notifyListeners();
+  }
+
   List<String> getMemberList () {
     // notifyListeners();
     return memberList;

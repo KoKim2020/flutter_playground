@@ -49,20 +49,32 @@ class Test extends StatelessWidget {
                     InputDecoration(hintText: "Add A New Member"),
               ),
 
-              FlatButton(
-                onPressed: () {
-                  if(memberController.text.isNotEmpty) {
-                    provider.addMember(member: memberController.text);
-                    memberController.clear();
-                  }
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => SecondRoute()),
-                  // );
-                },
-                child: Text('Add'),
-                color: Colors.green,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  FlatButton(
+                    onPressed: () {
+                      if(memberController.text.isNotEmpty) {
+                        provider.addMember(member: memberController.text);
+                        memberController.clear();
+                      }
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => SecondRoute()),
+                      // );
+                    },
+                    child: Text('Add'),
+                    color: Colors.green,
+                  ),
+                  FlatButton(
+                    onPressed: () {
+                      provider.clearMembers();
+                    },
+                    child: Text('Clear All'),
+                    color: Colors.red,
+                  ),
+                ],
               ),
             ],
           );
